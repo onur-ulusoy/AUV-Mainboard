@@ -48,6 +48,13 @@ This repository focuses Mainboard's hardware design. For more details on the fir
   - [Electronics Design](#electronics-design)
     - [Layer Structure](#layer-structure)
     - [Microcontroller](#microcontroller)
+    - [Connectivity](#connectivity)
+      - [UART](#uart)
+      - [RS232](#rs232)
+      - [I2C](#i2c)
+    - [Power Circuits](#power-circuits)
+      - [Power Inputs and Outputs](#power-inputs-and-outputs)
+      - [High-Side Switch (HSS) Circuits](#high-side-switch-hss-circuits)
 
 ## Board Description
 
@@ -94,4 +101,62 @@ Just as it is with the WARP Driver Board, the priority with the Mainboard's micr
     </a>
 </p>
 
+
+### Connectivity
+The Mainboard offers a wide range of connectivity options to interface with the various devices and subsystems that form the architecture of our AUV. This is essential for establishing efficient communication between the different units.
+
+#### UART
+The board is equipped with five UART (Universal Asynchronous Receiver/Transmitter) headers directly connected to the microcontroller. These headers primarily serve to establish communication with the sonars in our AUV system. The use of UART facilitates reliable data transfer, a crucial feature in our setup.
+
+#### RS232
+The Mainboard features four RS232 headers that are connected to the UARTs of the microcontroller via an RS232 interface IC. This arrangement is especially useful for long-distance communications as it can effectively resist electrical noise that may corrupt data. The RS232 interface is primarily used for communication with the Jetson Xavier, the DVL (Doppler Velocity Log), and the WARP Driver Board.
+
+RS232 and UART Headers of the Mainboard:
+
+<p align="center">
+    <a>
+        <img width="1800" src="Media/pictures/uart-rs.png">
+    </a>
+</p>
+
+#### I2C
+In addition, the board includes two I2C (Inter-Integrated Circuit) headers, which are directly connected to the microcontroller. I2C is a highly effective method for short-distance communication and is utilized in this system for exchanging data with pressure and temperature sensors. This bus system enables the microcontroller to access and control these sensors, making real-time monitoring of the AUV's environment possible.The I2C circuits also have their own LEDs to provide real-time monitoring of communication status.
+
+<p align="center">
+    <a>
+        <img width="1800" src="Media/pictures/i2c.png">
+    </a>
+</p>
+
+### Power Circuits
+
+#### Power Inputs and Outputs
+
+The Mainboard is designed to receive power inputs of 12V and 5V, along with GND (ground). It possesses several power output connectors that can effectively power peripheral units such as the onboard computer, sensors, and its own microcontroller. These connectors ensure reliable and efficient power distribution across the system, supporting the operation of all connected devices.
+
+<p align="center">
+    <a>
+        <img width="1800" src="Media/pictures/power-adc-pwm.png">
+    </a>
+</p>
+
+#### High-Side Switch (HSS) Circuits
+
+The Mainboard is equipped with three High-Side Switch (HSS) circuits. These circuits are primarily used to control high-power loads, such as the bin dropper solenoid, the torpedo valve, and the Doppler Velocity Log (DVL). The HSS circuits can be powered with either 12V or 5V and are controlled through the GPIO pins of the microcontroller. They also have their own LEDs to provide real-time monitoring of their status. The HSS circuits provide safe and efficient switching operations, ensuring reliable control over these critical components of the AUV.
+
+Selenoid driving with the HSS circuit in simulation can be seen below:
+
+<p align="center">
+    <a>
+        <img  width="1800" src="Media/pictures/hss-circuit.gif">
+    </a>
+</p>
+
+3 HSS placement on the PCB:
+
+<p align="center">
+    <a>
+        <img width="1800" src="Media/pictures/hss.png">
+    </a>
+</p>
 
