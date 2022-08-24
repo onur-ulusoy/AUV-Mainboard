@@ -55,6 +55,14 @@ This repository focuses Mainboard's hardware design. For more details on the fir
     - [Power Circuits](#power-circuits)
       - [Power Inputs and Outputs](#power-inputs-and-outputs)
       - [High-Side Switch (HSS) Circuits](#high-side-switch-hss-circuits)
+    - [Other Features](#other-features)
+      - [PWM Channels](#pwm-channels)
+      - [ADC's](#adcs)
+    - [Selections](#selections)
+      - [RS Power Chip Selection](#rs-power-chip-selection)
+      - [STM 5V Switch](#stm-5v-switch)
+      - [UART Switches](#uart-switches)
+    - [Debug \& Lighting](#debug--lighting)
 
 ## Board Description
 
@@ -157,6 +165,55 @@ Selenoid driving with the HSS circuit in simulation can be seen below:
 <p align="center">
     <a>
         <img width="1800" src="Media/pictures/hss.png">
+    </a>
+</p>
+
+### Other Features
+
+#### PWM Channels
+The Mainboard provides support for three Pulse Width Modulation (PWM) channels. These channels can be utilized to drive and control peripheral components like the Lumen Light and an External power switch. The ability to manipulate the duty cycle of these signals offers precise control over these devices, allowing for adaptive operation according to varying underwater conditions.
+
+#### ADC's
+In addition to its various connectivity options, the Mainboard is equipped with two Analog to Digital Converters (ADCs) integrated within the microcontroller. These ADCs play a crucial role in the Sens APM function, converting the analog measurements into digital data for further processing and evaluation by the microcontroller.
+
+### Selections
+
+In the design of the Mainboard, much thought has been given to providing flexibility and configurability. Various selections have been included in the board's design to manage connections physically and ensure operational continuity.
+
+#### RS Power Chip Selection
+
+The Mainboard includes a selection feature for the RS power chip. This allows for a switch between different power chips as per the requirement, ensuring the most efficient operation for different devices connected via the RS232 interface.
+
+<p align="center">
+    <a>
+        <img width="1800" src="Media/pictures/perspective-zoom-3.png">
+    </a>
+</p>
+
+#### STM 5V Switch
+
+The Mainboard also has a provision to physically control the power supply to the STM32 microcontroller. With the STM 5V switch, the supply to the microcontroller can be turned on or off without affecting the rest of the board, useful for testing and debugging.
+
+#### UART Switches
+
+Furthermore, the board features UART switches to manage the connections with the devices interfaced through the UART headers. These switches enable direct control over the communication lines, allowing for convenient management of device connections. 
+
+These selection features underscore the Mainboard's adaptability, allowing for a high degree of customization and control over the board's operation. They add an additional layer of robustness, enabling the board to continue operating efficiently even under changing conditions and requirements.
+
+<p align="center">
+    <a>
+        <img width="1800" src="Media/pictures/perspective-zoom-2.png">
+    </a>
+</p>
+
+
+### Debug & Lighting
+
+Ensuring effective monitoring and debugging of the Mainboard is crucial to its smooth operation and management. To this end, the Mainboard has been designed with a comprehensive array of LEDs, which serve the dual purpose of debugging support and lighting enhancement.
+
+<p align="center">
+    <a>
+        <img width="1800" src="Media/pictures/back-zoom.png">
     </a>
 </p>
 
