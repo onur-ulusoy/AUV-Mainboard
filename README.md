@@ -63,6 +63,8 @@ This repository focuses Mainboard's hardware design. For more details on the fir
       - [STM 5V Switch](#stm-5v-switch)
       - [UART Switches](#uart-switches)
     - [Debug \& Lighting](#debug--lighting)
+  - [Mechanical Design](#mechanical-design)
+  - [Manufacturing](#manufacturing)
 
 ## Board Description
 
@@ -216,4 +218,38 @@ Ensuring effective monitoring and debugging of the Mainboard is crucial to its s
         <img width="1800" src="Media/pictures/back-zoom.png">
     </a>
 </p>
+
+## Mechanical Design
+
+The mechanical design of the Mainboard is meticulously crafted to fit within the specific constraints of the Autonomous Underwater Vehicle (AUV). The board is designed to mount into the front tube of the AUV, matching the tube's form factor for an optimized fit.
+
+This is achieved by fastening the board through four corner holes that align with the mounting points within the tube. This approach ensures that the Mainboard remains securely positioned during the AUV's underwater operations, allowing it to endure the potential rigors of the marine environment.
+
+Moreover, this mechanical setup provides convenient accessibility to the board, which aids in the ease of maintenance and part replacements when required. The combination of a compact form factor and a secure mounting design allows the Mainboard to effectively fulfill its crucial roles in power distribution, communication, and control within the AUV.
+
+<p align="center">
+    <a>
+        <img width="1800" src="Media/pictures/assembly.png">
+    </a>
+</p>
+
+<picture>   <img alt="dash" src="Media/logos/dash.png"> </picture>
+
+<picture>   <img alt="assembly" src="Media/pictures/assembly-2.png"> </picture>
+
+
+## Manufacturing 
+
+In order to ensure that our Mainboard design meets the specific manufacturing specifications of our chosen PCB manufacturer, we have employed the Design Rule Check (DRC) feature in Altium Designer. You can check the detailed report of this rule verification in the output files directory. 
+
+The necessary Gerber files, which include the comprehensive manufacturing details needed to transform our electronic design into a tangible board, are compiled in the [Output](/Output) directory.
+
+We have manufactured and prototyped three versions of the Mainboard with JLC PCB, using the feedback and insights gained from each iteration to continuously refine the design and functionality.
+
+The final products, the manufactured boards, are currently installed on our Autonomous Underwater Vehicle and can be viewed at ITU Bisiklet Evi. This gives interested parties a chance to see our work firsthand and appreciate the tangible representation of our intricate electronics design.
+
+Below you can see a picture from Version 2 of Mainboard:
+
+<picture>   <img alt="assembly" src="Media/pictures/manufactured.jpg"> </picture>
+
 
